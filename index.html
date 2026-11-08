@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cold Email Subject Line Generator - Free Tool</title>
+    
+    <!-- Vercel Analytics Script -->
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; max-width: 550px; margin: auto; background-color: #0f172a; color: #f8fafc; }
+        h2 { color: #38bdf8; text-align: center; }
+        p.subtitle { text-align: center; color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
+        label { font-size: 14px; font-weight: bold; color: #cbd5e1; display: block; margin-top: 15px; }
+        input, select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #334155; background-color: #1e293b; color: white; box-sizing: border-box; margin-top: 5px; }
+        button { width: 100%; padding: 12px; background: #38bdf8; color: #0f172a; font-weight: bold; border: none; border-radius: 8px; margin-top: 20px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #0ea5e9; }
+        #result { margin-top: 25px; padding: 15px; background: #1e293b; border-radius: 8px; border: 1px solid #334155; white-space: pre-wrap; color: #e2e8f0; font-size: 14px; }
+        .coffee-btn { display: block; text-align: center; margin-top: 25px; color: #fbbf24; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>📧 AI Cold Email Subject Line Generator</h2>
+    <p class="subtitle">Generate high-converting subject lines for freelancers & agencies in seconds.</p>
+
+    <label for="serviceInput">What service/product are you offering?</label>
+    <input type="text" id="serviceInput" placeholder="e.g. Web Development, SEO, Graphic Design...">
+
+    <label for="targetInput">Who is your target client?</label>
+    <input type="text" id="targetInput" placeholder="e.g. E-commerce stores, Real estate agents...">
+
+    <button onclick="generateSubjectLines()">Generate Subject Lines ✨</button>
+
+    <div id="result">Your high-open-rate subject lines will appear here...</div>
+
+    <a class="coffee-btn" href="https://buymeacoffee.com" target="_blank">☕ Buy me a coffee ($3)</a>
+
+    <script>
+        function generateSubjectLines() {
+            const service = document.getElementById('serviceInput').value.trim();
+            const target = document.getElementById('targetInput').value.trim();
+            const resultDiv = document.getElementById('result');
+
+            if (!service || !target) {
+                alert('Please fill in both fields!');
+                return;
+            }
+
+            resultDiv.innerText = 'Generating high-converting subject lines... ⏳';
+
+            setTimeout(() => {
+                resultDiv.innerText = 
+`🎯 Curiosity Based:
+• Quick question regarding ${target}'s growth...
+• Idea for ${target} (not pitching)
+
+🔥 Benefit Driven:
+• Helping ${target} get more clients with ${service}
+• 3 simple changes to scale ${target} this month
+
+⚡ Short & Personal:
+• ${service} for ${target}?
+• Quick thought for your team`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
