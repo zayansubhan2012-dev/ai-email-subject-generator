@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cold Email Subject Line Generator - Free Tool</title>
+
+    <!-- Vercel Analytics Script -->
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; max-width: 550px; margin: auto; background-color: #0f172a; color: #f8fafc; }
+        h2 { color: #38bdf8; text-align: center; }
+        p.subtitle { text-align: center; color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
+        label { font-size: 14px; font-weight: bold; color: #cbd5e1; display: block; margin-top: 15px; }
+        input, select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #334155; background-color: #1e293b; color: #fff; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #38bdf8; color: #0f172a; font-weight: bold; border: none; border-radius: 8px; margin-top: 20px; cursor: pointer; }
+        button:hover { background: #0ea5e9; }
+        #result { margin-top: 25px; padding: 15px; background: #1e293b; border-radius: 8px; border: 1px solid #334155; white-space: pre-line; }
+        .coffee-btn { display: block; text-align: center; margin-top: 25px; color: #fbbf24; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>📧 AI Cold Email Subject Line Generator</h2>
+    <p class="subtitle">Generate high-converting subject lines for freelancers & agencies in seconds.</p>
+
+    <label for="topic">What is your email about?</label>
+    <input type="text" id="topic" placeholder="e.g. Website redesign services for local gyms">
+
+    <label for="tone">Tone of Voice:</label>
+    <select id="tone">
+        <option value="Curiosity">Curiosity & Intrigue</option>
+        <option value="Urgent">Urgent & Direct</option>
+        <option value="Professional">Professional & Formal</option>
+        <option value="Casual">Casual & Friendly</option>
+    </select>
+
+    <button onclick="generateSubjects()">Generate Subject Lines</button>
+
+    <div id="result">Your generated subject lines will appear here...</div>
+
+    <script>
+        function generateSubjects() {
+            const topic = document.getElementById('topic').value;
+            const tone = document.getElementById('tone').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!topic) {
+                resultDiv.innerText = "Please enter a topic first!";
+                return;
+            }
+
+            resultDiv.innerText = "Generating ideas...";
+
+            setTimeout(() => {
+                let lines = "";
+                if (tone === "Curiosity") {
+                    lines = `1. Quick question about ${topic}\n2. Idea for ${topic}...\n3. Thoughts on this for your team?`;
+                } else if (tone === "Urgent") {
+                    lines = `1. Missing out on ${topic}?\n2. Quick update regarding ${topic}\n3. Last attempt to connect on ${topic}`;
+                } else if (tone === "Professional") {
+                    lines = `1. Proposal regarding ${topic}\n2. ${topic} - Collaboration Opportunity\n3. Strategic inquiry regarding ${topic}`;
+                } else {
+                    lines = `1. Hey! Saw your work with ${topic}\n2. Quick thought on ${topic}\n3. Would love to connect over ${topic}`;
+                }
+                resultDiv.innerText = lines;
+            }, 800);
+        }
+    </script>
+
+</body>
+</html>
